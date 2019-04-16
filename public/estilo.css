@@ -1,0 +1,62 @@
+.container{
+
+ width: 100%;
+ border: 100px inset silver ;
+ background-color: white;
+ margin-top: 16em;
+}
+
+body{
+	background-image: url(img/gris.jpg);
+	background-color: white;
+	background-repeat: no-repeat ;
+	background-size: 130em 70em, cover;
+  font-family: 'Roboto', sans-serif;
+}
+.main-section {
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-right: 35em ;
+  border-radius: 50em;
+
+}
+
+.modal-content{
+  background-color: #3b4652;
+  opacity: .93;
+  padding: 110px 40px;
+  box-shadow: 90px 59px 15px #848484;
+
+  width: 500px;
+
+}
+
+h1{
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 80px;
+}
+p{
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 50px;
+}
+input{
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+label{
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+legend{
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
