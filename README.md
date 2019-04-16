@@ -21,6 +21,10 @@ Create User
 ```
 As a user want have a new count in AirBNB.
 ```
+
+```
+As a user want to login in MakersBNB
+```
 ##  Autores 👥
 * **Maria Jose Chavarria Bravo** - *Trabajo Inicial* - [marita30](https://github.com/marita30/MakesrBNB)
 * **Karel Molina** - *Trabajo Inicial* - [KarelMolina](https://github.com/karelmolina)
