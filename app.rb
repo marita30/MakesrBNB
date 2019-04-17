@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require 'sinatra'
 require 'pg'
-require './database_connection_setup'
-require './lib/user'
+require_relative './database_connection_setup'
+require_relative './lib/user'
 require 'sinatra/flash'
 
 class AirBNB < Sinatra::Base
@@ -25,4 +25,21 @@ class AirBNB < Sinatra::Base
     end
   end
   run! if app_file == $0
+
+  get '/login' do
+    erb :'users/login'
+  end
+
+  post '/login/new' do
+    user = User.authenticate(email: params[:email], password: params[:password])
+    unless user
+      flash[:notice] = 'Username and/or Password are incorrect'
+      redirect('/login')
+    else
+      session[:user_id] = user.id
+      flash[:notice] = 'You\'re now log in!'
+      redirect('/')
+    end
+  end
+
 end

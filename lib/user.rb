@@ -25,4 +25,15 @@ class User
       end
   end
 
+  def self.authenticate(email:, password:)
+    resultset = DatabaseConnection.query("SELECT * FROM usuario WHERE email = '#{email}';")
+    return unless resultset.any?
+    return unless BCrypt::Password.new(resultset[0]['password']) == password
+    User.new(id: resultset[0]['id'],
+            name: resultset[0]['name'],
+            email: resultset[0]['email'],
+            telefono: resultset[0]['telefono'],
+            host: resultset[0]['host'])
+  end
+
 end
