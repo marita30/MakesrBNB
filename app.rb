@@ -29,8 +29,6 @@ class AirBNB < Sinatra::Base
      erb :'space/new'
 
   end
-  run! if app_file == $0
-
   get '/login' do
     erb :'users/login'
   end
@@ -46,5 +44,5 @@ class AirBNB < Sinatra::Base
       redirect('/')
     end
   end
-
+run! if app_file == $0
 end
