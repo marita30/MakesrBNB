@@ -21,14 +21,15 @@ class AirBNB < Sinatra::Base
     else
       flash[:notice] = "Signup successfully"
       session[:user_id] = user.id
-      redirect '/'
+      redirect '/login'
     end
   end
 
   get '/space/new' do
      erb :'space/new'
-
   end
+
+  # karel
   get '/login' do
     erb :'users/login'
   end
