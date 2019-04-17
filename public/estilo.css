@@ -6,6 +6,7 @@
   opacity: .93;
   padding: 110px 40px;
   box-shadow: 90px 59px 15px #848484;
+  border-radius: 30px;
 
   width: 500px;
 }
@@ -51,4 +52,11 @@ legend{
   color: black;
   font-family: sans-serif;
   font-weight: bold;
+}
+h3 {
+  color: black;
+  font-family: sans-serif;
+  margin: 50px;
+  background-color: #3b4652 ;
+  box-shadow: 90px 59px 15px #848484;
 }

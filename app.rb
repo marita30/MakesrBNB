@@ -16,13 +16,18 @@ class AirBNB < Sinatra::Base
   post '/sessions' do
     user = User.create(name: params['name'], email: params['email'], password: params['password'], host: params['host'], telefono: params['telefono'])
     if user == nil
-      flash[:notice] = "Error , email already exist"
+      flash[:notice] = "Error , Email already exist"
       redirect '/'
     else
       flash[:notice] = "Signup successfully"
       session[:user_id] = user.id
       redirect '/'
     end
+  end
+
+  get '/space/new' do
+     erb :'space/new'
+
   end
   run! if app_file == $0
 end

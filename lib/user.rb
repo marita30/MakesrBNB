@@ -10,6 +10,7 @@ class User
     @telefono = telefono
     @host = host
   end
+
   def self.create(name:, email:, password:, telefono:, host:)
     if host == "true"
       value_host = true
