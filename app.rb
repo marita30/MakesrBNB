@@ -29,6 +29,12 @@ class AirBNB < Sinatra::Base
      erb :'space/new'
   end
 
+  post '/sessions/destroy' do
+  session.clear
+  flash[:notice] = 'You have signed out.'
+  redirect('/login')
+end
+
   # karel
   get '/login' do
     erb :'users/login'
