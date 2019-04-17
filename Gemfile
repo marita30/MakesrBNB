@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 
-gem 'bcrypt'
-gem 'rspec', group: :test, require: false
+gem 'rspec'
 gem 'sinatra'
 gem 'pg'
+gem 'shotgun'
+gem 'bcrypt'
+gem 'sinatra-flash'

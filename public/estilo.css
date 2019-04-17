@@ -1,0 +1,93 @@
+.container {
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-right: 35em;
+  background-color: #3b4652;
+  opacity: .93;
+  padding: 110px 40px;
+  box-shadow: 90px 59px 15px #848484;
+  width: 500px;
+}
+
+.center {
+  text-align: center;
+  margin-top: 2em;
+}
+
+body {
+  background-image: url(img/gris.jpg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 130em 70em, cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 80px;
+}
+
+p {
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 50px;
+}
+
+input {
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+label {
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+legend {
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+form {
+  display: block;
+}
+
+/***** curstom class *****/
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-control {
+  margin-top: 5px;
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.text-center {
+  text-align: center !important;
+}

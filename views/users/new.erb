@@ -1,0 +1,72 @@
+<h1><%= flash[:notice] %></h1>
+
+<center>
+  <h1>
+    Feel Home , Welcome :)
+  </h1>
+</center>
+
+<center>
+  <p>
+    Here you find many types of house for rent in your Holidays.... just you have that create a new count a ready.
+  </p>
+</center>
+
+<form method="post" action="/sessions">
+  <div class="container">
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Name:</label>
+      <div class="col-sm-10">
+        <input type="name" name="name" placeholder="Name">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" name="email" placeholder="Email">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">password:</label>
+      <div class="col-sm-10">
+        <input type="password" name="password" placeholder="Password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Telefono:</label>
+      <div class="col-sm-10">
+        <input type="telefono" name="telefono" placeholder="Telefono">
+      </div>
+    </div>
+
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Choose</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="host" id="gridRadios1" value="true" checked="checked">
+            <label class="form-check-label" for="gridRadios1">
+              Propietario
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="host" id="gridRadios2" value="false">
+            <label class="form-check-label" for="gridRadios2">
+              Alquilante
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group row center">
+      <div class="col-sm-10">
+        <input type="submit" value="Submit">
+      </div>
+    </div>
+  </form>
