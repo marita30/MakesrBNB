@@ -21,7 +21,10 @@ Create
 ```
 ## UserHistory 📌
 ```
-As a user want have a new count in AirBNB.
+As a user want have a new count in MakersBNB.
+```
+```
+As a user want to login in MakersBNB
 ```
 ## How to execute
 * just open the terminal and execute shotgun.
