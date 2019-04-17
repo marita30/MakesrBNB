@@ -11,16 +11,20 @@ _ Create the Extructure of work._
 * Ruby with Sinatra.
 * PGAdmin for dataBase.
 * Atom for Edit the text.
+* Queries in the folder db.
+
 
 ## Create the extructere the DataBase 🔩
 ### Creating the first table in the DataBase for the SignUp.
 ```
-Create User
+Create
 ```
 ## UserHistory 📌
 ```
 As a user want have a new count in AirBNB.
 ```
-##  Autores 👥
+## How to execute
+* just open the terminal and execute shotgun.
+##  Autors 👥
 * **Maria Jose Chavarria Bravo** - *Trabajo Inicial* - [marita30](https://github.com/marita30/MakesrBNB)
 * **Karel Molina** - *Trabajo Inicial* - [KarelMolina](https://github.com/karelmolina)
