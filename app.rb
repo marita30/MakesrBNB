@@ -4,7 +4,8 @@ require 'pg'
 require_relative './database_connection_setup'
 require_relative './lib/user'
 require 'sinatra/flash'
-
+require_relative './lib/categoria'
+require_relative './lib/space'
 class AirBNB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
@@ -26,6 +27,8 @@ class AirBNB < Sinatra::Base
   end
 
   get '/space/new' do
+    @category = Categoria.all
+    p @category
      erb :'space/new'
   end
 
