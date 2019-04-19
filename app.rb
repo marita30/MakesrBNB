@@ -51,5 +51,9 @@ end
       redirect('/')
     end
   end
+
+  get '/reserva' do
+    erb :'reserva/new'
+  end
 run! if app_file == $0
 end
