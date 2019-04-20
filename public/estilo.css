@@ -24,7 +24,7 @@
 
 .container-login{
 
-  margin-top: 15em;
+  margin-top: 3.5em;
   padding-right: 35em ;
   background-color: #3b4652;
   opacity: .93;
@@ -118,8 +118,8 @@ h1{
 .form-signin {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
   margin: 0 auto;
+  margin-top: 0%;
 }
 .form-signin .form-control {
   margin-top: 5px;
@@ -141,6 +141,10 @@ h1{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.form-signin p {
+  margin: auto;
 }
 
 .text-center {

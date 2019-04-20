@@ -3,6 +3,7 @@ require 'sinatra'
 require 'pg'
 require_relative './database_connection_setup'
 require_relative './lib/user'
+require_relative './lib/reserva'
 require 'sinatra/flash'
 require_relative './lib/categoria'
 require_relative './lib/space'
@@ -64,6 +65,10 @@ end
 
   get '/reserva' do
     erb :'reserva/new'
+  end
+
+  post '/reserva/new' do
+    reserva = Reserva.create(date_inicio: params[:dateinicio], date_final: params[:datefinal])
   end
 run! if app_file == $0
 end
