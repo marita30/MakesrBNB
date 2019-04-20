@@ -27,13 +27,18 @@ class AirBNB < Sinatra::Base
   end
 
   get '/space/new' do
-    @category = Categoria.all
-    p @category
+    @categories = Categoria.all
      erb :'space/new'
   end
 
   post '/space/new' do
-
+  @userid = session[:user_id]
+  @idcategoria = params['id_categories'].to_i
+  p params['pricexnight']
+  p @userid
+  space = Space.create(name: params['name'], description: params['description'], pricexnight: params['price'], location: params['location'], id_categories: @idcategoria, id_user: @userid)
+  flash[:notice] = 'satisfactorily'
+  redirect('/space/new')
   end
 
   post '/sessions/destroy' do
