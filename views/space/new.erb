@@ -1,5 +1,11 @@
 
 
+<center>	<h3>
+
+   <%= flash[:notice] %>
+
+
+ </h3></center>
 
     <ul class="nav nav-tabs" >
       <img src="../img/house.png" width="45" height="45">
@@ -24,12 +30,6 @@
 
     </h2></center>
 
-    <center><p>
-
-
-
-
-      </p></center>
 
 
 
@@ -64,8 +64,20 @@
     </div>
 </div>
 
+<center><div class="select">
+  <select name="id_categories">
+    <option value="">Choose the categories:</option>
+    <% @categories.map do |categoria|  %>
+    <option value="<%=categoria.id%>"><%=categoria.description%></option>
+      <% end%>
+  </select>
+</div></center>
 
-
-
+<div class="form-group row center">
+  <div class="col-sm-10">
+    <input style= "color: white;background: transparent;border: 2px solid #black;border-radius: 5px; cursor: pointer;" type="submit" value="Submit">
+  </div>
+</div>
+</form>
 
   </form>
