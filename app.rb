@@ -67,8 +67,31 @@ end
     erb :'reserva/new'
   end
 
-  post '/reserva/new' do
-    reserva = Reserva.create(date_inicio: params[:dateinicio], date_final: params[:datefinal])
+  post '/reserva/' do
+    fechainicio = params[]
+    redirect('/reserva/new/:name_user')
   end
+
+  get '/reserva/new/:name_user' do
+    params[:name_user] = '' #get the name of the user
+    space = '' #Space object
+
+  end
+
+  post '/reserva/new/:name_user' do
+    #TODO 
+    #view for al the spaces and get the space id.
+    space = '' #some Space object 
+    #calculate total price
+    total = 0 #some how calculate the total
+    reserva = Reserva.create(date_inicio: params[:dateinicio],
+                            date_final: params[:datefinal],
+                            price_total: total,
+                            id_request: 1,
+                            id_user: session[:user_id])
+    space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id) 
+    redirect("/")
+  end
+  
 run! if app_file == $0
 end
