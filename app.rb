@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
 require 'pg'
+require 'date'
 require_relative './database_connection_setup'
 require_relative './lib/user'
 require_relative './lib/reserva'
@@ -63,25 +64,21 @@ end
     end
   end
 
-  get '/reserva' do
+  get '/reserva/:id_space' do
+    @user = session[:user_id]
+    @id_space = params[:id_space]
     erb :'reserva/new'
   end
 
-  post '/reserva/' do
-    fechainicio = params[]
-    redirect('/reserva/new/:name_user')
+  get '/reserva/new/:id_user/:id_space' do
+    space = Space.find(id: params[:id_space])
+    user = User.find(id: params[:id_user])
+    erb :'reserva/create'
   end
 
-  get '/reserva/new/:name_user' do
-    params[:name_user] = '' #get the name of the user
-    space = '' #Space object
-
-  end
-
-  post '/reserva/new/:name_user' do
+  post '/reserva/new/:id_user/:id_space' do
     #TODO 
-    #view for al the spaces and get the space id.
-    space = '' #some Space object 
+    #view for al the spaces and get the space id 
     #calculate total price
     total = 0 #some how calculate the total
     reserva = Reserva.create(date_inicio: params[:dateinicio],
