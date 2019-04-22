@@ -1,5 +1,4 @@
 
-<% if @user.host == "t" %>
 <ul class="nav nav-tabs" >
   <img src="../img/house.png" width="45" height="45">
   <li class="nav-item" >
@@ -16,30 +15,6 @@
     </form>
   </li>
 </ul>
-<% else %>
-<ul class="nav nav-tabs" >
-  <img src="../img/house.png" width="45" height="45">
-  <li class="nav-item" >
-    <a style= "color:black" class="nav-link" href="#">Space</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="#">Reserve a space!</a>
-  </li>
-
-  <li class="nav-item">
-    <form action="/sessions/destroy" method="post">
-         <input class="nav-link active" type="submit" value="Sign out" />
-    </form>
-  </li>
-</ul>
-<% end %>
-
-
-
-
-
-
 
 
 <center>	<h3>
@@ -49,7 +24,7 @@
 
  </h3></center>
 
-    
+
 
     <center><h2>
 
