@@ -44,7 +44,7 @@ class User
             name: result[0]['name'],
             email: result[0]['email'],
             telefono: result[0]['telefono'],
-            host: resultset[0]['host'])
+            host: result[0]['host'])
   end
 
 end

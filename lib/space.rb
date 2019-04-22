@@ -18,7 +18,7 @@ class Space
     Space.new(id: result[0]['id_space'], name: result[0]['name'], description: result[0]['description'], pricexnight: result[0]['pricexnight'], location: result[0]['location'], id_categories: result[0]['id_categories'], id_user: result[0]['id_user'])
   end
 
-  def self.find(id:)do
+  def self.find(id:)
     result = DatabaseConnection.query("SELECT * FROM space WHERE id_space = '#{id}';")
     return unless result.any?
     Space.new(id: result[0]['id_space'], 
