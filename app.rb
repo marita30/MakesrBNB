@@ -12,7 +12,7 @@ class AirBNB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
 
-  get '/' do
+  get '/users/new' do
   		erb :'users/new'
   	end
 
@@ -20,12 +20,17 @@ class AirBNB < Sinatra::Base
     user = User.create(name: params['name'], email: params['email'], password: params['password'], host: params['host'], telefono: params['telefono'])
     if user == nil
       flash[:notice] = "Error , Email already exist"
-      redirect '/'
+      redirect '/users/new'
     else
       flash[:notice] = "Signup successfully"
       session[:user_id] = user.id
-      redirect '/login'
+      redirect '/'
     end
+  end
+
+  get '/' do
+    @user = User.find(id: session[:user_id])
+    erb :'space/index'
   end
 
   get '/space/new' do
@@ -90,6 +95,7 @@ end
     space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
     redirect("/")
   end
+
 
 run! if app_file == $0
 end

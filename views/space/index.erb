@@ -1,0 +1,74 @@
+<% if @user.host == "t" %>
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+  <li class="nav-item" >
+    <a style= "color:black" class="nav-link" href="/">Space new</a>
+  </li>
+
+  <li class="nav-item">
+    <a  style= "color:black" class="nav-link" href="#">Request</a>
+  </li>
+
+  <li class="nav-item">
+    <form action="/sessions/destroy" method="post">
+         <input class="nav-link active" type="submit" value="Sign out" />
+    </form>
+  </li>
+</ul>
+<% else %>
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+  <li class="nav-item" >
+    <a style= "color:black" class="nav-link" href="#">ListSpace</a>
+  </li>
+
+  <li class="nav-item">
+    <a  style= "color:black" class="nav-link" href="#">Reserve a space</a>
+  </li>
+
+  <li class="nav-item">
+    <form action="/sessions/destroy" method="post">
+         <input class="nav-link active" type="submit" value="Sign out" />
+    </form>
+  </li>
+</ul>
+<% end %>
+
+<form method="get" action="/">
+<div class="container-principal">
+  <center><h2> Welcome</h2></center>
+  <div class="container-primero">
+    <div class="card mb-3">
+  <div class="card-group">
+
+  <div class="card">
+    <img src="../img/home2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Una buena opcion para todas tus actividades...</h4>
+      <p class="card-text">"Si la oportunidad no llama , Construye una puerta"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="../img/homesummer.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Ideal para pasar un mejor verano en familia... </h4>
+      <p class="card-text">"Pasa tus mejores vacaciones con la comodidad de nuestros tipos de spaces"</p>
+      </div>
+  </div>
+
+  <div class="card">
+    <img src="../img/homewinter.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Que esperas para obtener un space con nosotros..</h4>
+      <p class="card-text">"Colecciona momentos, no cosas".</p>
+        </div>
+  </div>
+
+</div>
+
+
+      </div>
+   </div>
+
+  </div>
