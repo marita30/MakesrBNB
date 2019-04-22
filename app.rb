@@ -46,7 +46,7 @@ class AirBNB < Sinatra::Base
 end
 
 get '/spaces/:id/listspace' do
-  @space = Space.find(id: params['id'])
+  @space = Space.find(id: params['id_space'])
   erb :'space/index'
 end
 

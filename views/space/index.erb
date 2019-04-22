@@ -1,0 +1,9 @@
+<ul>
+  <% @space.bookmarks.each do |bookmark| %>
+    <li>
+      <a href="<%= space.url %>" target="_blank">
+        <%= space.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
