@@ -45,10 +45,6 @@ class AirBNB < Sinatra::Base
   redirect('/login')
 end
 
-get '/spaces/:id/listspace' do
-  @space = Space.find(id: params['id_space'])
-  erb :'space/index'
-end
 
   # karel
   get '/login' do
