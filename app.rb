@@ -29,6 +29,7 @@ class AirBNB < Sinatra::Base
   end
 
   get '/space/new' do
+    @user = User.find(id: session[:user_id])
     @categories = Categoria.all
      erb :'space/new'
   end
@@ -77,8 +78,8 @@ end
   end
 
   post '/reserva/new/:id_user/:id_space' do
-    #TODO 
-    #view for al the spaces and get the space id 
+    #TODO
+    #view for al the spaces and get the space id
     #calculate total price
     total = 0 #some how calculate the total
     reserva = Reserva.create(date_inicio: params[:dateinicio],
@@ -86,9 +87,9 @@ end
                             price_total: total,
                             id_request: 1,
                             id_user: session[:user_id])
-    space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id) 
+    space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
     redirect("/")
   end
-  
+
 run! if app_file == $0
 end

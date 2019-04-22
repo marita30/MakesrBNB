@@ -1,28 +1,28 @@
 
 
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+  <li class="nav-item" >
+    <a style= "color:black" class="nav-link" href="#">Space</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">Request</a>
+  </li>
+
+  <li class="nav-item">
+    <form action="/sessions/destroy" method="post">
+         <input class="nav-link active" type="submit" value="Sign out" />
+    </form>
+  </li>
+</ul>
+
 <center>	<h3>
 
    <%= flash[:notice] %>
 
 
  </h3></center>
-
-    <ul class="nav nav-tabs" >
-      <img src="../img/house.png" width="45" height="45">
-      <li class="nav-item" >
-        <a style= "color:black" class="nav-link" href="#">Space</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Request</a>
-      </li>
-
-      <li class="nav-item">
-        <form action="/sessions/destroy" method="post">
-             <input class="nav-link active" type="submit" value="Sign out" />
-        </form>
-      </li>
-    </ul>
 
     <center><h2>
 

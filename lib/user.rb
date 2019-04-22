@@ -37,14 +37,14 @@ class User
             host: resultset[0]['host'])
   end
 
-  def self.find(id: )
+  def self.find(id:)
     result = DatabaseConnection.query("SELECT * FROM usuario WHERE id_user = '#{id}';")
     return unless result.any?
     User.new(id: result[0]['id_user'],
             name: result[0]['name'],
             email: result[0]['email'],
             telefono: result[0]['telefono'],
-            host: resultset[0]['host'])
+            host: result[0]['host'])
   end
 
 end
