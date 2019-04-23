@@ -96,6 +96,17 @@ end
     redirect("/")
   end
 
+  get '/space/:id_space' do
+    @space = Space.find(id: params['id_space'])
+    @space_categoria = Categoria.find(id: @space.id_categories)
+    erb :'space/show'
+  end
+
+  get '/spaces' do
+    @spaces = Space.all
+    erb :'space/list'
+  end
+
 
 run! if app_file == $0
 end

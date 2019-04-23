@@ -17,4 +17,9 @@ class Categoria
     end
   end
 
+  def self.find(id:)
+    result = DatabaseConnection.query("SELECT * FROM types_space WHERE id_categories = '#{id}';")
+    p result
+    Categoria.new(id: result[0]['id_categories'], description: result[0]['description'])
+  end
 end

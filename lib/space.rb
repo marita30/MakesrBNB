@@ -30,4 +30,17 @@ class Space
               id_user: result[0]['id_user'])
   end
 
+  def self.all
+    result = DatabaseConnection.query("SELECT * FROM space;")
+    result.each do |space|
+      Space.new(id: space['id_space'],
+              name: space['name'],
+              description: space['description'],
+              pricexnight: space['pricexnight'],
+              location: space['location'],
+              id_categories: space['id_categories'],
+              id_user: space['id_user'])
+      end
+  end
+
 end

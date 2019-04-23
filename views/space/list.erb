@@ -1,0 +1,9 @@
+<ul>
+  <% @spaces.each do |space| %>
+    <li>
+      <a href="/space/<%= space['id_space'] %>" target="_blank">
+        <h1><%= space['name'] %></h1>
+      </a>
+    </li>
+  <% end %>
+</ul>
