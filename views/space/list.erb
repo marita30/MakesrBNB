@@ -1,9 +1,39 @@
-<ul>
-  <% @spaces.each do |space| %>
-    <li>
-      <a href="/space/<%= space['id_space'] %>" target="_blank">
-        <h1><%= space['name'] %></h1>
-      </a>
-    </li>
-  <% end %>
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+
+
+  <li class="nav-item">
+    <a style= "color:black" class="nav-link" href="/">ComeBack</a>
+  </li>
+
+  <li class="nav-item">
+    <form action="/sessions/destroy" method="post">
+         <input class="nav-link active" type="submit" value="Sign out" />
+    </form>
+  </li>
+
 </ul>
+<div class="container-principal">
+
+  <center><h2> List Of Space</h2></center>
+
+    <div class="card mb-3">
+      <div class="card-group">
+        <div class="card">
+
+          <ul>
+            <% @spaces.each do |space| %>
+            <li>
+              <div class="container-primero">
+                <a href="/space/<%= space['id_space'] %>" target="_blank">
+                  <h4><%= space['name'] %></h4>
+                </a>
+              </div>
+            </li>
+            <% end %>
+           </ul>
+
+         </div>
+       </div>
+     </div>
+</div>

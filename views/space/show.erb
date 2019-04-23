@@ -1,7 +1,61 @@
-<div class="">
-  <h1><%= @space.id %></h1>
-  <h2><%= @space.name %></h2>
-  <h2><%= @space.pricexnight %></h2>
-  <h2><%= @space.description %></h2>
-  <h1><%= @space_categoria.description %></h1>
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+
+
+  <li class="nav-item">
+    <a style= "color:black" class="nav-link" href="/">ComeBack</a>
+  </li>
+
+  <li class="nav-item">
+    <form action="/sessions/destroy" method="post">
+         <input class="nav-link active" type="submit" value="Sign out" />
+    </form>
+  </li>
+</ul>
+
+
+<div class="container-principal">
+
+  <center><h2>More details of space</h2></center>
+
+  <div class="card mb-3">
+    <div class="card-group">
+      <div class="card">
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Id_User: <h4><%= @space.id %></h4></label>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name:<h4><%= @space.name %></h4></label>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Description:<h4><%= @space.description %></h4></label>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Pricexnight:<h4><%= @space.pricexnight %></h4></label>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Location:<h4><%= @space.location %></h4></label>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Categories: <h4><%= @space_categoria.description %></h4></label>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form action="/reserva/new" method="get">
+  <button style="background-color: mistyrose;" class="btn btn-lg btn-primary btn-block"type="submit" name="button"><h4>Reservar</h4></button>
+
 </div>
