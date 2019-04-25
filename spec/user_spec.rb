@@ -7,7 +7,7 @@ describe User do
   before(:each) do
     @user = User.create(name: 'cristopher', email: 'test@example.com', password: 'password123', telefono: '84798537', host: 'f' )
   end
-  
+
   describe '.create' do
     it 'creating a new user' do
       persisted_data = persisted_data(id: @user.id, table: 'usuario')
@@ -38,7 +38,5 @@ describe User do
     it 'returns nil if there is no ID given' do
      expect(User.find(id: nil)).to eq nil
    end
-
   end
-
 end
