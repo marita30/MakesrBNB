@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs" >
+  <img src="../img/house.png" width="45" height="45">
+    <li class="nav-item">
+      <a style= "color:black" class="nav-link" href="/">Home</a>
+    </li>
+</ul>
+<center>
+  <div class="container-login">
+    <form class="form-signin" action="/reserva/new/<%= @user %>/<%= @id_space%>" method="get">
+      <div class="text-center">
+        <p>Disponibilidad para su reserva</p>
+        <p>Cuando quiere alojarse?</p>
+        <input name="dateinicio" type="text" id="datepickerI" placeholder="Fecha inicio" class="form-control" readonly>
+        <input name="datefinal" type="text" id="datepickerF" placeholder="Fecha salida" class="form-control" readonly>
+        <button type="submit" name="button" class="btn btn-lg btn-primary btn-block btn-margin">Reservar</button>
+      </div>
+    </form>
+  </div>
