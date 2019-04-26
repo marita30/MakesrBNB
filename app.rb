@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra'
 require 'pg'
 require 'date'
+require 'twilio-ruby'
 require_relative './database_connection_setup'
 require_relative './lib/user'
 require_relative './lib/reserva'
@@ -100,6 +101,20 @@ end
                             id_request: 1,
                             id_user: session[:user_id])
     space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
+    @user = User.find(params[:id_user])
+    @space = Space.find(params[:id_space])
+    body = 'a request to your place' + @space.name +' have been made from ' + params[:dateinicio] +
+            'to ' + params[:datefinal] + ' confirm o reject in your dashboard.'
+    if space_reserva
+      account = 'AC0e52370705a3dfd7c94ff29b7d972971'
+      token = '633a85c0a36929e799a0b80e5a2bfa28'
+      @client = Twilio::REST::Client.new(account,token)
+      message = @client.messages.create(
+        to: '+505' + (@user.telefono).to_s,
+        from: '+17087614813',
+        body: body
+      )
+    end
     redirect("/")
   end
 
