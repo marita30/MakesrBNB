@@ -19,7 +19,7 @@ class Space
   end
 
   def self.find(id:)
-      return nil unless id
+    return nil unless id
     result = DatabaseConnection.query("SELECT * FROM space WHERE id_space = '#{id}';")
     Space.new(id: result[0]['id_space'],
               name: result[0]['name'],
