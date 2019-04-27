@@ -6,6 +6,7 @@ require 'twilio-ruby'
 require_relative './database_connection_setup'
 require_relative './lib/user'
 require_relative './lib/reserva'
+require_relative './lib/space-reserva'
 require 'sinatra/flash'
 require_relative './lib/categoria'
 require_relative './lib/space'
@@ -95,14 +96,16 @@ end
     #view for al the spaces and get the space id
     #calculate total price
     total = 0 #some how calculate the total
+    defultrequest = 1
     reserva = Reserva.create(date_inicio: params[:dateinicio],
                             date_final: params[:datefinal],
                             price_total: total,
-                            id_request: 1,
+                            id_request: defultrequest,
                             id_user: session[:user_id])
     space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
     @user = User.find(params[:id_user])
     @space = Space.find(params[:id_space])
+    @userHost = User.find(@space.id_user)
     body = 'a request to your place ' + @space.name + ' have been made from ' + params[:dateinicio] +
             'to ' + params[:datefinal] + ' confirm o reject in your dashboard.'
     if space_reserva
@@ -110,7 +113,7 @@ end
       token = '633a85c0a36929e799a0b80e5a2bfa28'
       @client = Twilio::REST::Client.new(account,token)
       message = @client.messages.create(
-        to: '+505' + (@user.telefono).to_s,
+        to: '+505' + (@userHost.telefono).to_s,
         from: '+17087614813',
         body: body
       )
