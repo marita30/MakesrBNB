@@ -119,7 +119,6 @@ end
   end
 
  # para imprimir la lista de space
- 
   get '/space/:id_space' do
     @space = Space.find(id: params['id_space'])
     @space_categoria = Categoria.find(id: @space.id_categories)
@@ -131,6 +130,5 @@ end
     erb :'space/list'
   end
 
-
-run! if app_file == $0
+      run! if app_file == $0
 end
