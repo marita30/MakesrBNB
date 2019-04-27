@@ -103,7 +103,7 @@ end
     space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
     @user = User.find(params[:id_user])
     @space = Space.find(params[:id_space])
-    body = 'a request to your place' + @space.name +' have been made from ' + params[:dateinicio] +
+    body = 'a request to your place ' + @space.name + ' have been made from ' + params[:dateinicio] +
             'to ' + params[:datefinal] + ' confirm o reject in your dashboard.'
     if space_reserva
       account = 'AC0e52370705a3dfd7c94ff29b7d972971'
