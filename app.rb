@@ -92,31 +92,28 @@ end
   end
 
   post '/reserva/new/:id_user/:id_space' do
-    #TODO
-    #view for al the spaces and get the space id
-    #calculate total price
-    total = 0 #some how calculate the total
     defultrequest = 1
-    reserva = Reserva.create(date_inicio: params[:dateinicio],
-                            date_final: params[:datefinal],
-                            price_total: total,
+    reserva = Reserva.create(date_inicio: Date.parse(params[:dateI]),
+                            date_final: Date.parse(params[:dateF]),
+                            price_total: params[:total],
                             id_request: defultrequest,
                             id_user: session[:user_id])
-    space_reserva = SpaceReserva.create(id_space: space.id, id_reserva: reserva.id)
-    @user = User.find(params[:id_user])
-    @space = Space.find(params[:id_space])
-    @userHost = User.find(@space.id_user)
-    body = 'a request to your place ' + @space.name + ' have been made from ' + params[:dateinicio] +
-            'to ' + params[:datefinal] + ' confirm o reject in your dashboard.'
+    space_reserva = SpaceReserva.create(id_space: params[:id_space], id_reserva: reserva.id)
+    @space = Space.find(id: params[:id_space])
+    @user = User.find(id: @space.id_user)
+    body = 'a request to your place ' + @space.name + ' have been made from ' + params[:dateI] +
+            'to ' + params[:dateF] + ' confirm o reject in your dashboard.'
     if space_reserva
       account = 'AC0e52370705a3dfd7c94ff29b7d972971'
       token = '633a85c0a36929e799a0b80e5a2bfa28'
       @client = Twilio::REST::Client.new(account,token)
       message = @client.messages.create(
-        to: '+505' + (@userHost.telefono).to_s,
+        to: '+505' + (@user.telefono).to_s,
         from: '+17087614813',
         body: body
       )
+
+      flash[:notice] = 'Your request is done!'
     end
     redirect("/")
   end

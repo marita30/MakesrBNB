@@ -3,9 +3,9 @@ require_relative './database_connection'
 class Reserva
     
     def self.create(date_inicio:, date_final:, price_total:, id_request:, id_user:)
-        result = Database_Connection.query("INSERT INTO reservas(date_inicio, date_final, price_total, id_request, id_user)
+        result = DatabaseConnection.query("INSERT INTO reservas(date_inicio, date_final, price_total, id_request, id_user)
          VALUES ('#{date_inicio}','#{date_final}','#{price_total}','#{id_request}','#{id_user}') RETURNING id_reserva, date_inicio, date_final, price_total, id_request, id_user ;")
-        Reserva.new(id: result[0]['id_reservas'],
+        Reserva.new(id: result[0]['id_reserva'],
                     date_inicio: result[0]['date_inicio'],
                     date_final: result[0]['date_final'],
                     price_total: result[0]['price_total'],
